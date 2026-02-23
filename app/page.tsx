@@ -274,11 +274,11 @@ const Navbar = () => {
   return (
     <nav className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-      isScrolled ? "bg-dark-bg/80 backdrop-blur-md border-b border-white/5 py-3" : "bg-transparent"
+      isScrolled ? "bg-[#0f0f12]/95 border-b border-white/5 py-3" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+        <div className="w-8 h-8 bg-[#ff2d2d] rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(255,45,45,0.5)]">
             <Zap className="text-dark-bg w-5 h-5 fill-current" />
           </div>
           <span className="font-display font-bold text-xl tracking-tight">AviatorX</span>
@@ -311,7 +311,7 @@ const Navbar = () => {
           <a
             href="/aviatorx-v1.0.apk"
             download
-            className="bg-white text-dark-bg px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-all"
+            className="bg-[#ff2d2d] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#ff4444] transition-all shadow-[0_0_25px_rgba(255,45,45,0.5)]"
           >
             {t.nav.download}
           </a>
@@ -420,7 +420,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative flex justify-center"
         >
-          <div className="relative z-10 glass-card p-3 md:p-4 mx-auto max-w-[280px] md:max-w-[320px] aspect-[9/19] shadow-2xl">
+          <div className="relative z-10 bg-[#16161b] border border-white/5 rounded-2xl p-3 md:p-4 mx-auto max-w-[280px] md:max-w-[320px] aspect-[9/19] shadow-2xl">
             <div className="w-full h-full bg-dark-bg rounded-xl overflow-hidden relative border border-white/5">
               {/* Mock App Interface */}
               <div className="p-6 h-full flex flex-col">
@@ -493,7 +493,7 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card p-6 md:p-8 hover:bg-white/[0.05] transition-all group"
+              className="bg-[#16161b] border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] transition-all group"
             >
               <div className="mb-6 p-3 bg-accent/10 rounded-xl w-fit group-hover:scale-110 transition-transform">
                 {icons[idx]}
@@ -571,7 +571,7 @@ const Trust = () => {
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">{t.trust.title}</h2>
             <div className="grid grid-cols-2 gap-4">
               {t.trust.badges.map((badge, idx) => (
-                <div key={idx} className="flex items-center gap-3 p-4 glass-card">
+                <div key={idx} className="flex items-center gap-3 p-4 bg-[#16161b] border border-white/5 rounded-2xl">
                   <div className="text-accent">{badgeIcons[idx]}</div>
                   <span className="text-sm font-medium text-white/80">{badge.label}</span>
                 </div>
@@ -587,7 +587,7 @@ const Trust = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.2 }}
-                className="glass-card p-8 relative"
+                className="bg-[#16161b] border border-white/5 rounded-2xl p-8 relative"
               >
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((s) => (
@@ -643,7 +643,7 @@ const DownloadSection = ({ onComingSoon }: { onComingSoon: () => void }) => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
             <button
               onClick={onComingSoon}
-              className="flex items-center gap-3 px-6 py-3 glass-card hover:bg-white/10 transition-all justify-center"
+              className="flex items-center gap-3 px-6 py-3 bg-[#16161b] border border-white/5 rounded-2xl hover:bg-white/10 transition-all justify-center"
             >
                 <Smartphone className="w-6 h-6" />
                 <div className="text-left">
@@ -653,7 +653,7 @@ const DownloadSection = ({ onComingSoon }: { onComingSoon: () => void }) => {
               </button>
               <button
                 onClick={onComingSoon}
-                className="flex items-center gap-3 px-6 py-3 glass-card hover:bg-white/10 transition-all justify-center"
+                className="flex items-center gap-3 px-6 py-3 bg-[#16161b] border border-white/5 rounded-2xl hover:bg-white/10 transition-all justify-center"
               >
                 <Globe className="w-6 h-6" />
                 <div className="text-left">
@@ -720,7 +720,7 @@ const ComingSoonModal = ({ open, onClose }: { open: boolean; onClose: () => void
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[9999] flex items-center justify-center px-4"
           >
-            <div className="w-full max-w-md glass-card p-8 rounded-2xl text-center border border-white/10">
+            <div className="w-full max-w-md bg-[#16161b] border border-white/5 rounded-2xl p-8 rounded-2xl text-center border border-white/10">
 
               {/* Icon */}
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-accent/10 flex items-center justify-center">
@@ -765,7 +765,7 @@ export default function App() {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t: translations[lang] }}>
-      <div className="min-h-screen font-sans selection:bg-accent selection:text-dark-bg">
+      <div className="min-h-screen font-sans bg-[#0f0f12] text-white selection:bg-[#ff2d2d] selection:text-white">
         <Navbar />
         <main>
           <Hero />

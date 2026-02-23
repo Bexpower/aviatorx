@@ -2,10 +2,10 @@
 
 /* === Base Theme Colors === */
 :root {
-  --color-dark-bg: #0c0f14;
-  --color-dark-surface: #11151c;
-  --color-accent: #00f0ff;
-  --color-text: #ffffff;
+  --dark-bg: #0f0f12;
+  --dark-surface: #16161b;
+  --accent: #ff2d2d;
+  --accent-glow: #ff3b3b;
 }
 
 /* Force dark mode */
